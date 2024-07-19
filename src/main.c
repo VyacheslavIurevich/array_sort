@@ -35,8 +35,7 @@ void arg_check(bounds_t *bounds, char *argument, int8_t *exit_code) {
   }
 }
 
-bounds_t *parse_commandline_args(int argc, char *argv[],
-                                        int8_t *exit_code) {
+bounds_t *parse_commandline_args(int argc, char *argv[], int8_t *exit_code) {
   bounds_t *bounds = NULL;
 
   if (argc < 2)

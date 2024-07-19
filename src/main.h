@@ -23,8 +23,6 @@ bounds_t *bounds_init();
 
 void arg_check(bounds_t *bounds, char *argument, int8_t *exit_code);
 
-bounds_t *parse_commandline_args(int argc, char *argv[],
-                                        int8_t *exit_code);
+bounds_t *parse_commandline_args(int argc, char *argv[], int8_t *exit_code);
 
 void parse_input(bounds_t *bounds, int8_t *exit_code);
-
