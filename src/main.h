@@ -1,3 +1,4 @@
+#pragma once
 #include <inttypes.h>
 #include <stdbool.h>
 #define MAX_INPUT_LEN 100
