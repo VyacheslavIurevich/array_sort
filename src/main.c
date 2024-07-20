@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void insertion_sort(int64_t *array, uint8_t len);
+extern void insertion_sort(int64_t *array, uint8_t len);
 
 bounds_t *bounds_init() {
   bounds_t *bounds = (bounds_t *)malloc(sizeof(bounds_t));
@@ -18,7 +18,7 @@ bounds_t *bounds_init() {
   return bounds;
 }
 
-void arg_check(bounds_t *bounds, char *argument, int8_t *exit_code) {
+static void arg_check(bounds_t *bounds, char *argument, int8_t *exit_code) {
 
   if (strncmp(argument, "--from=", 7) == 0) {
     if (bounds->from_exists == true)
@@ -35,7 +35,8 @@ void arg_check(bounds_t *bounds, char *argument, int8_t *exit_code) {
   }
 }
 
-bounds_t *parse_commandline_args(int argc, char *argv[], int8_t *exit_code) {
+static bounds_t *parse_commandline_args(int argc, char *argv[],
+                                        int8_t *exit_code) {
   bounds_t *bounds = NULL;
 
   if (argc < 2)
@@ -53,7 +54,7 @@ bounds_t *parse_commandline_args(int argc, char *argv[], int8_t *exit_code) {
   return bounds;
 }
 
-void parse_input(bounds_t *bounds, int8_t *exit_code) {
+static void parse_input(bounds_t *bounds, int8_t *exit_code) {
   int64_t curr_num, to_sort[MAX_INPUT_LEN], to_compare[MAX_INPUT_LEN];
   uint8_t i = 0, j, cnt = 0;
   bool first_out = true, first_err = true;
