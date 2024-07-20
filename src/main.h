@@ -27,4 +27,4 @@ static void arg_check(bounds_t *bounds, char *argument, int8_t *exit_code);
 static bounds_t *parse_commandline_args(int argc, char *argv[],
                                         int8_t *exit_code);
 
-static void parse_input(bounds_t *bounds, int8_t *exit_code);
+static void parse_and_sort(bounds_t *bounds, int8_t *exit_code);

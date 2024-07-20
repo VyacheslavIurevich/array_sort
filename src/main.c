@@ -7,7 +7,7 @@
 
 extern void insertion_sort(int64_t *array, uint8_t len);
 
-bounds_t *bounds_init() {
+static bounds_t *bounds_init() {
   bounds_t *bounds = (bounds_t *)malloc(sizeof(bounds_t));
 
   bounds->from_exists = false;
@@ -54,7 +54,7 @@ static bounds_t *parse_commandline_args(int argc, char *argv[],
   return bounds;
 }
 
-static void parse_input(bounds_t *bounds, int8_t *exit_code) {
+static void parse_and_sort(bounds_t *bounds, int8_t *exit_code) {
   int64_t curr_num, to_sort[MAX_INPUT_LEN], to_compare[MAX_INPUT_LEN];
   uint8_t i = 0, j, cnt = 0;
   bool first_out = true, first_err = true;
@@ -97,7 +97,7 @@ int main(int argc, char *argv[]) {
 
   bounds_t *bounds = parse_commandline_args(argc, argv, &exit_code);
   if (exit_code == all_fine)
-    parse_input(bounds, &exit_code);
+    parse_and_sort(bounds, &exit_code);
 
   if (bounds)
     free(bounds);
