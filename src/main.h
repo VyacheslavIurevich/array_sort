@@ -12,10 +12,10 @@ enum exit_code {
 };
 
 typedef struct {
-  bool from_exists;
-  bool to_exists;
   int64_t from;
   int64_t to;
+  bool from_exists;
+  bool to_exists;
 } bounds_t;
 
 extern void insertion_sort(int64_t *array, uint8_t len);
